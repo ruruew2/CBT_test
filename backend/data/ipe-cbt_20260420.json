@@ -1,0 +1,728 @@
+[
+  {
+    "subject": "소프트웨어 설계",
+    "questionNo": 1,
+    "questionText": "요구사항 개발 프로세스의 순서로 옳은 것은?",
+    "choices": [
+      "㉠-㉡-㉢-㉣",
+      "㉠-㉢-㉡-㉣",
+      "㉠-㉣-㉡-㉢",
+      "㉠-㉡-㉣-㉢"
+    ],
+    "explanations": [
+      "요구사항 개발 프로세스는 도출 -> 분석 -> 명세 -> 확인 순으로 진행됩니다. (암기팁: 도분명확)"
+    ],
+    "answer": 1,
+    "boxContent": "㉠ 도출(Elicitation)  ㉡ 분석(Analysis)\n㉢ 명세(Specification) ㉣ 확인(Validation)"
+  },
+  {
+    "subject": "소프트웨어 개발",
+    "questionNo": 2,
+    "questionText": "다음 설명의 소프트웨어 테스트의 기본원칙은?",
+    "choices": [
+      "살충제 패러독스",
+      "결함 집중",
+      "오류 부재의 궤변",
+      "완벽한 테스팅은 불가능"
+    ],
+    "explanations": [
+      "파레토 법칙(80:20 법칙)에 따라 약 20%의 모듈에서 전체 결함의 80%가 발견된다는 원칙은 '결함 집중'입니다."
+    ],
+    "answer": 2,
+    "boxContent": "• 파레토 법칙이 좌우한다.\n• 애플리케이션 결함의 대부분은 소수의 특정한 모듈에 집중되어 존재한다.\n• 결함은 발생한 모듈에서 계속 추가로 발생할 가능성이 높다."
+  },
+  {
+    "subject": "데이터베이스 구축",
+    "questionNo": 3,
+    "questionText": "다음 postfix로 표현된 연산식의 연산 결과로 옳은 것은?",
+    "choices": [
+      "35",
+      "42",
+      "81",
+      "360"
+    ],
+    "explanations": [
+      "후위 표기법 계산: (3*4) + (5*6) = 12 + 30 = 42입니다."
+    ],
+    "answer": 2,
+    "boxContent": "3 4 * 5 6 * +"
+  },
+  {
+    "subject": "데이터베이스 구축",
+    "questionNo": 4,
+    "questionText": "테이블 R1, R2에 대하여 다음 SQL문의 결과는?",
+    "choices": [
+      "20202222 포함 전체 행",
+      "학번 20202222",
+      "모든 학번 리스트",
+      "NULL 포함 리스트"
+    ],
+    "explanations": [
+      "INTERSECT는 교집합입니다. R1과 R2에 공통으로 존재하는 학번은 20202222 하나뿐입니다."
+    ],
+    "answer": 2,
+    "boxContent": "(SELECT 학번 FROM R1)\nINTERSECT\n(SELECT 학번 FROM R2)\n\n[R1 테이블] 학번: 20201111, 20202222\n[R2 테이블] 학번: 20202222, 20203333"
+  },
+  {
+    "subject": "데이터베이스 구축",
+    "questionNo": 5,
+    "questionText": "다음 SQL 문에서 ( ) 안에 들어갈 내용으로 옳은 것은?",
+    "choices": [
+      "SET",
+      "FROM",
+      "INTO",
+      "IN"
+    ],
+    "explanations": [
+      "UPDATE문의 기본 형식은 [UPDATE 테이블명 SET 컬럼=값 WHERE 조건] 입니다."
+    ],
+    "answer": 1,
+    "boxContent": "UPDATE 인사급여 (  ) 호봉=15 WHERE 성명='홍길동';"
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 6,
+    "questionText": "다음 설명에 해당하는 방식은?",
+    "choices": [
+      "STA",
+      "Collision Domain",
+      "CSMA/CA",
+      "CSMA/CD"
+    ],
+    "explanations": [
+      "무선 랜(IEEE 802.11)에서 사용하는 충돌 회피 방식은 CSMA/CA입니다. (CD는 유선 이더넷)"
+    ],
+    "answer": 3,
+    "boxContent": "• 무선 랜에서 데이터 전송 시, 매체가 비어 있음을 확인한 뒤 충돌을 회피하기 위해 임의의 시간을 기다린 후 데이터를 전송하는 방법이다.\n• 네트워크에 데이터의 전송이 없는 경우라도 동시 전송에 의한 충돌에 대비하여 확인 신호를 전송한다."
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 7,
+    "questionText": "다음 C언어 프로그램이 실행되었을 때의 결과는?",
+    "choices": [
+      "3",
+      "4",
+      "7",
+      "10"
+    ],
+    "explanations": [
+      "| (OR) 연산은 둘 중 하나만 1이어도 1이 됩니다. 100 | 111 = 111(7)입니다."
+    ],
+    "answer": 3,
+    "boxContent": "int a = 4; (00000100)\nint b = 7; (00000111)\nint c = a | b;\nprintf(\"%d\", c);"
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 8,
+    "questionText": "다음 JAVA 프로그램이 실행되었을 때의 결과는?",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "explanations": [
+      "do-while은 무조건 한 번 실행되어 cnt=1이 되고, 1 < 0은 거짓이므로 루프를 빠져나옵니다. 이후 if(cnt==1) 조건에 따라 cnt++가 되어 최종 2가 출력됩니다."
+    ],
+    "answer": 1,
+    "boxContent": "int cnt = 0;\ndo { cnt++; } while (cnt < 0);\nif (cnt == 1) cnt++;\nelse cnt = cnt + 3;\nSystem.out.printf(\"%d\", cnt);"
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 9,
+    "questionText": "다음 C언어 프로그램이 실행되었을 때의 결과는?",
+    "choices": [
+      "1",
+      "11",
+      "66",
+      "98"
+    ],
+    "explanations": [
+      "'A'의 아스키 코드는 65입니다. 65 + 1 = 66이며, %d로 출력했으므로 정수 66이 나옵니다."
+    ],
+    "answer": 3,
+    "boxContent": "char a;\na = 'A' + 1;\nprintf(\"%d\", a);"
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 10,
+    "questionText": "다음 내용이 설명하는 것은?",
+    "choices": [
+      "SAN",
+      "MBR",
+      "NAC",
+      "NIC"
+    ],
+    "explanations": [
+      "장치 간 고속 네트워크를 통해 스토리지(저장장치)를 연결하는 방식은 SAN(Storage Area Network)입니다."
+    ],
+    "answer": 1,
+    "boxContent": "- 네트워크상에 광채널 스위치의 이점인 고속 전송과 장거리 연결 및 멀티 프로토콜 기능을 활용\n- 각기 다른 운영체제를 가진 여러 기종들이 동일 저장장치의 데이터를 공유하게 함으로써 단일화시킨 시스템"
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 11,
+    "questionText": "다음 중 암호화 키와 복호화 키가 동일한 암호화 알고리즘은?",
+    "choices": [
+      "RSA",
+      "AES",
+      "ECC",
+      "Diffie-Hellman"
+    ],
+    "explanations": [
+      "AES는 대표적인 대칭키(비밀키) 암호화 알고리즘으로, 암호화와 복호화에 사용하는 키가 동일합니다."
+    ],
+    "answer": 2
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 12,
+    "questionText": "다음이 설명하는 용어로 옳은 것은?",
+    "choices": [
+      "Hadoop",
+      "Beowulf",
+      "Tajo",
+      "Memcached"
+    ],
+    "explanations": [
+      "대용량 데이터를 분산 처리하기 위한 자바 기반의 오픈소스 프레임워크는 하둡(Hadoop)입니다."
+    ],
+    "answer": 1,
+    "boxContent": "오픈 소스를 기반으로 한 분산 컴퓨팅 플랫폼으로, 일반 PC급 컴퓨터들로 가상화된 대용량 저장장치를 구축하고 그 안에서 데이터를 복제하고 분산 처리할 수 있는 처리 인프라이다."
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 13,
+    "questionText": "다음 내용이 설명하는 용어는?",
+    "choices": [
+      "SQL Injection",
+      "Cross-Site Request Forgery",
+      "XSS",
+      "DDos"
+    ],
+    "explanations": [
+      "CSRF(Cross-Site Request Forgery)는 사용자가 인증된 상태에서 공격자가 원하는 요청을 강제로 보내게 하는 공격입니다."
+    ],
+    "answer": 2,
+    "boxContent": "사용자가 자신의 의지와 무관하게 공격자가 의도한 행위(수정, 삭제, 등록 등)를 특정 웹사이트에 요청하게 하는 공격 방식이다."
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 14,
+    "questionText": "로그 파일의 크기를 고려하여 전송하는 로그 회전(Log Rotation) 기능과 관련 있는 것은?",
+    "choices": [
+      "syslog",
+      "logrotate",
+      "cron",
+      "rsyslog"
+    ],
+    "explanations": [
+      "리눅스 시스템에서 로그 파일의 관리를 위해 주기적으로 로그를 백업하고 삭제하는 도구는 logrotate입니다."
+    ],
+    "answer": 2,
+    "boxContent": "/etc/logrotate.conf"
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 15,
+    "questionText": "다음 내용이 설명하는 용어로 옳은 것은?",
+    "choices": [
+      "Data Mining",
+      "Data Warehouse",
+      "Data Mart",
+      "OLAP"
+    ],
+    "explanations": [
+      "기업의 의사 결정을 지원하기 위해 데이터를 통합 관리하는 창고는 데이터 웨어하우스(Data Warehouse)입니다."
+    ],
+    "answer": 2,
+    "boxContent": "기업 내의 주요 시스템의 데이터들을 추출, 변환하여 통합한 데이터의 창고를 의미하며, 의사 결정 지원 시스템(DSS)의 기초가 된다."
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 16,
+    "questionText": "다음 설명에 해당하는 보안 공격은?",
+    "choices": [
+      "Sniffing",
+      "Spoofing",
+      "DoS",
+      "Phishing"
+    ],
+    "explanations": [
+      "DoS(Denial of Service)는 서비스 거부 공격으로, 서버의 자원을 고갈시켜 정상 서비스를 방해합니다."
+    ],
+    "answer": 3,
+    "boxContent": "정상적인 서비스를 제공하는 서버에 가짜 서비스 요청을 대량으로 보내 자원을 고갈시켜 정상적인 사용자가 서비스를 이용하지 못하게 하는 공격이다."
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 17,
+    "questionText": "다음 중 테라폼(Terraform)에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "코드를 통해 인프라를 관리하는 IaC 도구이다.",
+      "애플리케이션 배포를 위한 CI/CD 도구이다.",
+      "네트워크 보안을 위한 방화벽 장비이다.",
+      "데이터베이스 설계를 위한 모델링 도구이다."
+    ],
+    "explanations": [
+      "Terraform은 Infrastructure as Code(IaC)의 대표적인 도구로, 코드를 통해 인프라를 생성하고 관리합니다."
+    ],
+    "answer": 1
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 18,
+    "questionText": "다음 C언어 코드의 실행 결과는?",
+    "choices": [
+      "6",
+      "9",
+      "12",
+      "15"
+    ],
+    "explanations": [
+      "i가 1, 3, 5일 때만 sum에 더해집니다. 1 + 3 + 5 = 9입니다."
+    ],
+    "answer": 2,
+    "boxContent": "int main() {\n  int i = 0, sum = 0;\n  while (i < 5) {\n    i++;\n    if (i % 2 == 0) continue;\n    sum += i;\n  }\n  printf(\"%d\", sum);\n  return 0;\n}"
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 19,
+    "questionText": "다음 파이썬 코드의 실행 결과는?",
+    "choices": [
+      "[5, 7, 9]",
+      "[1, 2, 3, 4, 5, 6]",
+      "[[1, 2, 3], [4, 5, 6]]",
+      "에러 발생"
+    ],
+    "explanations": [
+      "파이썬 리스트에서 + 연산은 두 리스트를 하나로 이어붙입니다."
+    ],
+    "answer": 2,
+    "boxContent": "a = [1, 2, 3]\nb = [4, 5, 6]\nprint(a + b)"
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 20,
+    "questionText": "다음 중 클라우드 서비스 모델의 종류가 아닌 것은?",
+    "choices": [
+      "IaaS",
+      "PaaS",
+      "SaaS",
+      "DaaS"
+    ],
+    "explanations": [
+      "클라우드 서비스의 3대 모델은 IaaS, PaaS, SaaS입니다. (DaaS는 최근에 부상하고 있으나 전통적인 3대 분류에는 포함되지 않는 경우가 많습니다.)"
+    ],
+    "answer": 4
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 21,
+    "questionText": "다음 JAVA 프로그램의 실행 결과는?",
+    "choices": [
+      "0",
+      "3",
+      "-8",
+      "-9"
+    ],
+    "explanations": [
+      "case 3에서 k=0이 된 후, break문이 없기 때문에 아래 case들을 모두 수행합니다. k = 0 + 3 - 10 - 1 = -8이 됩니다."
+    ],
+    "answer": 3,
+    "boxContent": "public class Test {\n  public static void main(String[] args) {\n    int i = 3, k = 1;\n    switch(i) {\n      case 1: k++;\n      case 2: k += 3;\n      case 3: k = 0;\n      case 4: k += 3;\n      case 5: k -= 10;\n      default: k--;\n    }\n    System.out.print(k);\n  }\n}"
+  },
+  {
+    "subject": "소프트웨어 개발",
+    "questionNo": 22,
+    "questionText": "다음이 설명하는 화이트박스 테스트 검증 기준은?",
+    "choices": [
+      "문장 검증 기준",
+      "결정 검증 기준",
+      "조건 검증 기준",
+      "다중 조건 검증 기준"
+    ],
+    "explanations": [
+      "전체 조건식(결정 지점)의 결과가 참/거짓을 한 번씩 수행하도록 하는 것은 결정 검증 기준(Decision Coverage)입니다."
+    ],
+    "answer": 2,
+    "boxContent": "소스 코드의 모든 조건문에 대해 조건식의 결과가 true인 경우와 false인 경우가 최소한 한 번씩 실행되도록 테스트 케이스를 설계하는 기준이다."
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 23,
+    "questionText": "다음 C언어 프로그램의 실행 결과는?",
+    "choices": [
+      "9, 20",
+      "10, 20",
+      "9, 21",
+      "10, 21"
+    ],
+    "explanations": [
+      "&& 연산에서 앞의 조건(i > 10)이 거짓이므로 뒤의 조건(j++ > 20)은 실행되지 않습니다(Short Circuit). 따라서 i는 9가 되고 j는 그대로 20입니다."
+    ],
+    "answer": 1,
+    "boxContent": "#include <stdio.h>\nint main() {\n  int i, j;\n  i = 10; j = 20;\n  if(i > 10 && j++ > 20) i = i + 1;\n  else i = i - 1;\n  printf(\"%d, %d\", i, j);\n  return 0;\n}"
+  },
+  {
+    "subject": "소프트웨어 설계",
+    "questionNo": 24,
+    "questionText": "다음 유스케이스 다이어그램에서 '대출'과 '도서조회'의 관계는?",
+    "choices": [
+      "확장(Extension) 관계",
+      "포함(Inclusion) 관계",
+      "일반화(Generalization) 관계",
+      "그룹화(Grouping) 관계"
+    ],
+    "explanations": [
+      "<<include>> 화살표는 하나의 유스케이스가 다른 유스케이스를 반드시 포함해야 할 때 사용하는 '포함 관계'입니다."
+    ],
+    "answer": 2,
+    "boxContent": "[유스케이스 다이어그램]\n- 사용자 -> (대출)\n- (대출) --- <<include>> ---> (도서조회)"
+  },
+  {
+    "subject": "데이터베이스 구축",
+    "questionNo": 25,
+    "questionText": "다음 두 릴레이션에서 릴레이션 R2를 참조하고 있는 릴레이션 R1의 외래키(Foreign Key)는?",
+    "choices": [
+      "학번",
+      "성명",
+      "학과코드",
+      "학과명"
+    ],
+    "explanations": [
+      "R1의 학과코드가 R2의 기본키인 학과코드를 참조하고 있으므로 R1의 외래키는 학과코드입니다."
+    ],
+    "answer": 3,
+    "boxContent": "[R1] 학번, 성명, 학과코드\n[R2] 학과코드, 학과명, 위치"
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 26,
+    "questionText": "다음 중 테일러링(Tailoring) 방법론의 내부적 기준에 해당하는 것은?",
+    "choices": [
+      "국제 표준",
+      "프로젝트의 규모",
+      "법적 제약사항",
+      "기술적 환경"
+    ],
+    "explanations": [
+      "프로젝트의 규모, 난이도, 성격 등은 조직 내부 상황에 따른 내부적 기준입니다."
+    ],
+    "answer": 2
+  },
+  {
+    "subject": "데이터베이스 구축",
+    "questionNo": 27,
+    "questionText": "다음 SQL문의 실행 결과로 옳은 것은?",
+    "choices": [
+      "기획 부서 사원의 이름 목록",
+      "기획 부서 사원의 급여 합계",
+      "기획 부서 사원의 수",
+      "모든 부서 사원의 수"
+    ],
+    "explanations": [
+      "COUNT(*) 함수는 조건에 맞는 행의 개수를 구하므로 기획 부서 사원의 인원수를 반환합니다."
+    ],
+    "answer": 3,
+    "boxContent": "SELECT COUNT(*) FROM 사원 WHERE 부서 = '기획';"
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 28,
+    "questionText": "다음 Python 프로그램의 실행 결과는?",
+    "choices": [
+      "elld",
+      "ell d",
+      "ello d",
+      "elldo"
+    ],
+    "explanations": [
+      "a[1:3]은 'el', b[-2:]은 뒤에서 두 글자인 'ld'입니다. 합치면 'elld'가 됩니다."
+    ],
+    "answer": 1,
+    "boxContent": "a = \"Hello\"\nb = \"World\"\nprint(a[1:3] + b[-2:])"
+  },
+  {
+    "subject": "소프트웨어 개발",
+    "questionNo": 29,
+    "questionText": "다음 내용이 설명하는 형상 관리 도구는?",
+    "choices": [
+      "Git",
+      "CVS",
+      "Subversion(SVN)",
+      "Ant"
+    ],
+    "explanations": [
+      "아파치 재단에서 개발한 중앙 집중형 버전 관리 시스템은 SVN(Subversion)입니다."
+    ],
+    "answer": 3,
+    "boxContent": "• 아파치 소프트웨어 재단에서 개발하였다.\n• 클라이언트/서버 방식으로 운영되며, 소스 파일의 버전 관리를 지원한다.\n• 중앙 저장소를 통해 소스 코드를 통합 관리한다."
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 30,
+    "questionText": "다음 중 스택 가드(Stack Guard)의 특징으로 옳은 것은?",
+    "choices": [
+      "메모리 주소 공간의 배치를 난수화한다.",
+      "복귀 주소와 변수 사이에 카나리(Canary) 값을 삽입한다.",
+      "실행 권한이 없는 메모리 영역을 생성한다.",
+      "네트워크 트래픽을 모니터링하여 공격을 차단한다."
+    ],
+    "explanations": [
+      "Stack Guard는 스택 오버플로우 방지를 위해 복귀 주소 앞에 카나리 값을 두어 변조 여부를 확인하는 기법입니다."
+    ],
+    "answer": 2
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 31,
+    "questionText": "다음 C언어 프로그램의 실행 결과는?",
+    "choices": [
+      "15",
+      "50",
+      "25",
+      "5"
+    ],
+    "explanations": [
+      "||(OR) 연산에서 j > 5가 참이므로 if문이 실행됩니다. i + j = 5 + 10 = 15입니다."
+    ],
+    "answer": 1,
+    "boxContent": "#include <stdio.h>\nint main() {\n  int i = 5, j = 10, k = 15;\n  if (i > 5 || j > 5) {\n    k = i + j;\n  } else {\n    k = i * j;\n  }\n  printf(\"%d\", k);\n  return 0;\n}"
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 32,
+    "questionText": "C클래스 네트워크를 26비트 서브넷 마스크로 나눴을 때, 하나의 서브넷에서 할당 가능한 최대 호스트 수는? (단, 네트워크 주소와 브로드캐스트 주소 제외)",
+    "choices": [
+      "30개",
+      "62개",
+      "126개",
+      "254개"
+    ],
+    "explanations": [
+      "26비트 마스크는 호스트 비트가 6비트(32-26)입니다. 2^6 = 64에서 주소 2개를 빼면 62개입니다."
+    ],
+    "answer": 2
+  },
+  {
+    "subject": "소프트웨어 개발",
+    "questionNo": 33,
+    "questionText": "다음이 설명하는 테스트 단계는?",
+    "choices": [
+      "단위 테스트",
+      "통합 테스트",
+      "시스템 테스트",
+      "인수 테스트"
+    ],
+    "explanations": [
+      "모듈 간의 인터페이스를 확인하고 결합하는 단계는 통합 테스트(Integration Test)입니다."
+    ],
+    "answer": 2,
+    "boxContent": "• 개별 모듈들을 결합하여 하나의 시스템으로 완성해가는 과정에서 모듈 간의 인터페이스 오류를 확인하는 테스트이다.\n• 비점진적 방법과 점진적 방법(상향식, 하향식)이 있다."
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 34,
+    "questionText": "다음 Python 프로그램의 실행 결과는?",
+    "choices": [
+      "norm",
+      "orma",
+      "ormat",
+      "ormation"
+    ],
+    "explanations": [
+      "인덱스 3번('o')부터 7번 앞('a')까지 추출하므로 'orma'가 출력됩니다. (I:0, n:1, f:2, o:3, r:4, m:5, a:6, t:7)"
+    ],
+    "answer": 2,
+    "boxContent": "a = \"Information!\"\nprint(a[3:7])"
+  },
+  {
+    "subject": "데이터베이스 구축",
+    "questionNo": 35,
+    "questionText": "다음 관계형 데이터베이스의 속성(Attribute)에 대한 설명으로 틀린 것은?",
+    "choices": [
+      "속성은 데이터베이스를 구성하는 가장 작은 논리적 단위이다.",
+      "속성의 수를 차수(Degree)라고 한다.",
+      "속성은 개체의 특성을 기술한다.",
+      "속성의 수를 카디널리티(Cardinality)라고 한다."
+    ],
+    "explanations": [
+      "카디널리티는 튜플(행)의 수이고, 속성(열)의 수는 차수(Degree)입니다."
+    ],
+    "answer": 4
+  },
+  {
+    "subject": "소프트웨어 설계",
+    "questionNo": 36,
+    "questionText": "다음이 설명하는 디자인 패턴은?",
+    "choices": [
+      "Abstract Factory",
+      "Builder",
+      "Factory Method",
+      "Prototype"
+    ],
+    "explanations": [
+      "인스턴스 생성을 서브클래스에 위임하는 패턴은 팩토리 메서드(Factory Method) 패턴입니다."
+    ],
+    "answer": 3,
+    "boxContent": "객체를 생성하기 위한 인터페이스를 정의하지만, 어떤 클래스를 인스턴스화할지는 서브클래스가 결정하도록 하는 패턴이다."
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 37,
+    "questionText": "다음 중 트로이 목마(Trojan Horse)에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "자기 복제 능력을 가지고 네트워크를 통해 전파된다.",
+      "정상적인 프로그램으로 가장하여 숨어 있다가 실행된다.",
+      "시스템의 부팅 영역이나 파일에 감염된다.",
+      "대량의 트래픽을 발생시켜 서버를 마비시킨다."
+    ],
+    "explanations": [
+      "트로이 목마는 겉보기엔 정상 같지만 악의적인 기능을 포함하고 있으며, 자기 복제 능력은 없습니다."
+    ],
+    "answer": 2
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 38,
+    "questionText": "다음 C언어 프로그램의 실행 결과는?",
+    "choices": [
+      "10",
+      "20",
+      "30",
+      "40"
+    ],
+    "explanations": [
+      "포인터 p가 a의 주소를 가리키므로 *p를 바꾸면 a가 바뀝니다. a = 10 + 20 = 30이 됩니다."
+    ],
+    "answer": 3,
+    "boxContent": "#include <stdio.h>\nint main() {\n  int a = 10, b = 20;\n  int *p = &a;\n  *p = *p + b;\n  printf(\"%d\", a);\n  return 0;\n}"
+  },
+  {
+    "subject": "데이터베이스 구축",
+    "questionNo": 39,
+    "questionText": "다음 E-R 다이어그램의 기호에 대한 설명으로 틀린 것은?",
+    "choices": [
+      "사각형: 개체(Entity) 타입",
+      "타원: 속성(Attribute)",
+      "마름모: 관계(Relationship) 타입",
+      "삼각형: 속성 간 연결"
+    ],
+    "explanations": [
+      "E-R 모델에서 개체와 속성 등의 연결은 실선(Line)으로 표시하며, 삼각형은 사용되지 않습니다."
+    ],
+    "answer": 4
+  },
+  {
+    "subject": "소프트웨어 설계",
+    "questionNo": 40,
+    "questionText": "공통 모듈의 재사용 범위에 따른 분류 중, 다음 설명에 해당하는 것은?",
+    "choices": [
+      "컴포넌트",
+      "라이브러리",
+      "모듈",
+      "프레임워크"
+    ],
+    "explanations": [
+      "기능 단위로 분할된 코드 조각이며 독립적으로 식별 가능한 부분은 '모듈'입니다."
+    ],
+    "answer": 3,
+    "boxContent": "특정 기능을 수행하기 위해 독립적으로 작성된 코드 조각으로, 다른 프로그램에서 호출하여 사용할 수 있는 최소 단위이다."
+  },
+  {
+    "subject": "소프트웨어 설계",
+    "questionNo": 41,
+    "questionText": "다음이 설명하는 디자인 패턴은?",
+    "choices": [
+      "Observer",
+      "State",
+      "Strategy",
+      "Visitor"
+    ],
+    "explanations": [
+      "관찰 대상의 상태 변화를 관찰자들에게 통지하는 패턴은 옵저버(Observer) 패턴입니다."
+    ],
+    "answer": 1,
+    "boxContent": "전통적인 GUI 프레임워크에서 자바 스윙(Swing)의 이벤트 모델과 같이, 한 객체의 상태가 바뀌면 그 객체에 의존하는 다른 객체들로 메시지가 가고 자동으로 내용이 갱신되는 방식의 패턴이다."
+  },
+  {
+    "subject": "정보시스템 구축관리",
+    "questionNo": 42,
+    "questionText": "다음 설명에 해당하는 응용 계층의 프로토콜은?",
+    "choices": [
+      "POP3",
+      "IMAP",
+      "SMTP",
+      "SNMP"
+    ],
+    "explanations": [
+      "메일 전송에 사용되는 프로토콜은 SMTP(Simple Mail Transfer Protocol)입니다. (POP3, IMAP은 메일을 수신할 때 사용)"
+    ],
+    "answer": 3,
+    "boxContent": "• TCP 포트 25번을 사용한다.\n• 인터넷상에서 이메일을 전송하기 위해 사용되는 표준 프로토콜이다."
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 43,
+    "questionText": "다음 C언어 프로그램의 실행 결과는?",
+    "choices": [
+      "30",
+      "50",
+      "60",
+      "20"
+    ],
+    "explanations": [
+      "*(p+1)은 arr[1]인 20이고, *(p+2)는 arr[2]인 30입니다. 20 + 30 = 50이 출력됩니다."
+    ],
+    "answer": 2,
+    "boxContent": "#include <stdio.h>\nint main() {\n  int arr[3] = {10, 20, 30};\n  int *p = arr;\n  printf(\"%d\", *(p + 1) + *(p + 2));\n  return 0;\n}"
+  },
+  {
+    "subject": "데이터베이스 구축",
+    "questionNo": 44,
+    "questionText": "다음 SQL 문을 실행한 결과는?",
+    "choices": [
+      "주소가 입력되지 않은 학생의 수",
+      "주소가 입력된 학생의 수",
+      "모든 학생의 수",
+      "주소 필드에 'NULL'이라고 적힌 학생의 수"
+    ],
+    "explanations": [
+      "IS NULL 조건은 해당 필드에 값이 비어있는(NULL) 레코드를 찾는 조건입니다."
+    ],
+    "answer": 1,
+    "boxContent": "SELECT COUNT(*) FROM 학생 WHERE 주소 IS NULL;"
+  },
+  {
+    "subject": "프로그래밍 언어 활용",
+    "questionNo": 45,
+    "questionText": "다음 JAVA 프로그램의 실행 결과는?",
+    "choices": [
+      "10",
+      "20",
+      "true",
+      "false"
+    ],
+    "explanations": [
+      "삼항 연산자 (조건 ? 참 : 거짓)입니다. 10 > 20은 거짓이므로 b의 값인 20이 출력됩니다."
+    ],
+    "answer": 2,
+    "boxContent": "int a = 10;\nint b = 20;\nSystem.out.print(a > b ? a : b);"
+  },
+  {
+    "subject": "소프트웨어 개발",
+    "questionNo": 46,
+    "questionText": "정적 분석 도구에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "프로그램을 실행하여 결함을 찾는다.",
+      "소스 코드를 실행하지 않고 구조를 분석하여 결함을 찾는다.",
+      "사용자의 요구사항이 맞는지 확인하는 도구이다.",
+      "시스템의 성능을 측정하기 위한 도구이다."
+    ],
+    "explanations": [
+      "정적 분석(Static Analysis)은 코드를 실행하지 않은 상태에서 잠재적인 결함을 찾아내는 기법입니다."
+    ],
+    "answer": 2
+  }
+]

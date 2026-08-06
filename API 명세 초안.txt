@@ -1,0 +1,105 @@
+<API 명세 초안>
+
+@ 1, 2, 3 = 세정 작업
+@ 4, 5, 6 = 미현 작업
+
+1_ [GET /questions/random — 랜덤 문제 조회]
+
+// Query params
+{ "count": 20 }
+
+// Response
+[
+  {
+    "id": 1,
+    "subject": "소프트웨어 설계",
+    "questionNo": 1,
+    "questionText": "문제 텍스트",
+    "choices": ["보기1", "보기2", "보기3", "보기4"],
+    "answer": 2,
+    "explanations": ["해설1", "해설2"]
+  }
+]
+
+
+
+
+
+
+
+2_[GET /questions/subject — 과목별 문제 조회
+
+// Query params
+{ "subject": "소프트웨어 설계", "count": 20 }
+
+// Response (위와 동일)
+
+
+
+
+
+
+
+3_ [POST /results — 시험 결과 저장]
+
+// Request
+{
+  "user_id": 1,
+  "mode": "random", // or "subject"
+  "subject": null, // 과목별이면 과목명
+  "answers": [
+    { "question_id": 1, "selected": 2, "is_correct": true }
+  ]
+}
+
+// Response
+{
+  "result_id": 1,
+  "score": 75.0,
+  "subject_scores": {
+    "소프트웨어 설계": 80.0,
+    "소프트웨어 개발": 60.0
+  }
+}
+
+
+
+
+4_ [GET /results/{user_id} — 시험 이력 조회]
+// Response
+[
+  {
+    "result_id": 1,
+    "date": "2026-04-15",
+    "mode": "random",
+    "score": 75.0
+  }
+]
+
+
+
+
+
+5_[GET /results/{result_id}/wrong — 오답 조회]
+// Response
+[
+  {
+    "question_id": 1,
+    "subject": "소프트웨어 설계",
+    "question_text": "문제 텍스트",
+    "choices": ["보기1", "보기2", "보기3", "보기4"], // 추가!
+    "selected": 3, // 유저가 선택한 답
+    "answer": 2, // 실제 정답
+    "explanations": ["해설"]
+  }
+]
+
+
+
+6_[POST /auth/register / POST /auth/login — 회원가입/로그인]
+// Register Request
+{ "username": "미현", "email": "...", "password": "..." }
+
+// Login Response
+{ "access_token": "jwt토큰", "token_type": "bearer" }
+
