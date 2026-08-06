@@ -98,13 +98,13 @@ export default function WrongAnswersScreen({
           )}
         </div>
 
-        {wrongQuestions.length === 0 ? (
-          <div className="bg-white rounded-3xl p-20 text-center border-2 border-dashed border-slate-200 shadow-sm">
-            <div className="text-5xl mb-4">✨</div>
-            <p className="text-xl font-bold text-slate-700 mb-2">기록된 오답이 없습니다!</p>
-            <p className="text-slate-400">모든 문제를 맞히셨거나 데이터를 불러오는 중입니다.</p>
-          </div>
-        ) : (
+{wrongQuestions.length === 0 ? (
+  <div className="bg-white rounded-3xl p-20 text-center border-2 border-dashed border-slate-200 shadow-sm">
+    <div className="text-5xl mb-4">✨</div>
+    <p className="text-xl font-bold text-slate-700 mb-2">기록된 오답이 없습니다!</p>
+    <p className="text-slate-400">모든 문제를 맞히셨어요! 정말 대단해요 🎉</p>
+  </div>
+) : (
           <div className="space-y-8 pb-20">
             {wrongQuestions.map((q: any, idx: number) => {
               const uAns = activeAnswers[q.id] ?? activeAnswers[String(q.id)] ?? activeAnswers[`question-${q.id}`];

@@ -55,7 +55,7 @@ export default function AuthForm({ type, onStatusChange, onUserChange }: Props) 
                 setError(data.detail || '인증에 실패했습니다.');
             }
         } catch (e) {
-            setError('서버 연결에 실패했습니다. 백엔드가 작동 중인지 확인하세요.');
+            setError('로그인에 실패했습니다. 잠시 후 다시 시도해주세요.');
         }
     };
 
