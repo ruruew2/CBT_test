@@ -192,9 +192,18 @@ def get_random_questions(count: int = Query(20, ge=1, le=100), session: Session 
 
 @app.get("/questions/subject")
 def get_subject_questions(subject: str = Query(...), count: int = Query(20, ge=1, le=100)):
-    filtered = [q for q in _cached_questions if q.get("subject") == subject]
+    # 1. 프론트엔드가 보낸 과목명과 DB 과목명 모두 공백(Space) 및 여백 제거 후 비교
+    target_clean = subject.replace(" ", "").strip()
+    
+    filtered = [
+        q for q in _cached_questions 
+        if q.get("subject") and q.get("subject").replace(" ", "").strip() == target_clean
+    ]
+
     if not filtered:
+        print(f"⚠️ 매칭 실패: 전달받은 subject='{subject}', 정제된 subject='{target_clean}'")
         return []
+
     count = min(count, len(filtered))
     return random.sample(filtered, count)
 
