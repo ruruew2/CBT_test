@@ -81,28 +81,35 @@ export function useExam() {
         localStorage.removeItem(EXAM_STORAGE_KEY);
     }, []);
 
-    const loadQuestions = useCallback(async () => {
-        try {
-            const isAll = selectedSubject === 'all';
-            const count = isAll ? 100 : 20;
+const loadQuestions = useCallback(async (targetSubject?: string) => {
+    try {
+        const currentSubject = targetSubject ?? selectedSubject;
+        const isAll = currentSubject === 'all';
+        const count = isAll ? 100 : 20;
 
-            const url = isAll
-                ? `${API_BASE_URL}/questions/random?count=${count}`
-                : `${API_BASE_URL}/questions/subject?subject=${encodeURIComponent(selectedSubject)}&count=${count}`;
+        const url = isAll
+            ? `${API_BASE_URL}/questions/random?count=${count}`
+            : `${API_BASE_URL}/questions/subject?subject=${encodeURIComponent(currentSubject)}&count=${count}`;
 
-            const res = await fetch(url);
-            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        console.log("요청 보내는 URL:", url);
 
-            const data = await res.json();
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
-            if (data && data.length > 0) {
-                setQuestions(data);
-                setTimeLeft(isAll ? 150 * 60 : 30 * 60);
-            }
-        } catch (e) {
-            console.error('데이터 로딩 실패:', e);
+        const data = await res.json();
+
+        if (data && data.length > 0) {
+            setQuestions(data);
+            setTimeLeft(isAll ? 150 * 60 : 30 * 60);
+        } else {
+            console.warn("불러온 문제 데이터가 0개입니다.");
+            setQuestions([]);
         }
-    }, [selectedSubject]);
+    } catch (e) {
+        console.error('데이터 로딩 실패:', e);
+        setQuestions([]);
+    }
+}, [selectedSubject]);
 
     const fetchHistory = useCallback(async () => {
         if (!user) return;
@@ -191,12 +198,12 @@ export function useExam() {
     // 저장된 시험 상태가 없을 때만 ready에서 새 문제 불러오기
     useEffect(() => {
         if (isAuthChecking) return;
-
-        const savedExam = localStorage.getItem(EXAM_STORAGE_KEY);
-        if (status === 'ready' && !savedExam) {
-            loadQuestions();
+        
+        // ready 상태에서 과목이 변경되면 해당 과목 20개 문제를 즉시 가져옴
+        if (status === 'ready') {
+            loadQuestions(selectedSubject);
         }
-    }, [status, loadQuestions, isAuthChecking]);
+    }, [selectedSubject, status, isAuthChecking, loadQuestions]);
 
     useEffect(() => {
         if (isAuthChecking) return;

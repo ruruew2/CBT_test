@@ -37,30 +37,42 @@ export default function App() {
         return <AuthForm type={exam.status} onStatusChange={exam.setStatus} onUserChange={exam.setUser} />;
     }
 
-    // ── 시험 시작 화면 ───────────────────────────────────────
-    if (exam.status === 'ready') {
-        return (
-            <ReadyScreen
-                user={exam.user}
-                subjects={exam.subjects || []}
-                selectedSubject={exam.selectedSubject}
-                filteredQuestionsLength={exam.filteredQuestions?.length || 0}
-                onSubjectChange={exam.setSelectedSubject}
-                onLogout={exam.handleLogout}
-                onFetchHistory={exam.fetchHistory}
-                // [핵심 변경] 새 시험 시작 버튼을 눌렀을 때의 로직
-                onStatusChange={async (newStatus) => {
-                    if (newStatus === 'testing') {
-                        exam.handleReset();
+// ── 시험 시작 화면 ───────────────────────────────────────
+if (exam.status === 'ready') {
+    return (
+        <ReadyScreen
+            user={exam.user}
+            subjects={exam.subjects || []}
+            selectedSubject={exam.selectedSubject}
+            filteredQuestionsLength={exam.filteredQuestions?.length || 0}
+            
+            // 💡 [수정 포인트 1] 과목 변경 시 즉시 20문제를 불러오도록 수정
+            onSubjectChange={async (subject) => {
+                exam.setSelectedSubject(subject);
+                // 과목이 선택되었으면 해당 과목 문제 20개를 바로 로딩
+                if (subject !== '') {
+                    await exam.loadQuestions(subject); 
+                }
+            }}
+            
+            onLogout={exam.handleLogout}
+            onFetchHistory={exam.fetchHistory}
+            
+            // 💡 [수정 포인트 2] 시작 버튼 클릭 시
+            onStatusChange={async (newStatus) => {
+                if (newStatus === 'testing') {
+                    // 이미 filteredQuestions에 문제 20개가 차있지 않다면 한번 더 로드
+                    if (!exam.filteredQuestions || exam.filteredQuestions.length === 0) {
                         await exam.loadQuestions();
-                        exam.setStatus('testing');
-                    } else {
-                        exam.setStatus(newStatus);
                     }
-                }}
-            />
-        );
-    }
+                    exam.setStatus('testing');
+                } else {
+                    exam.setStatus(newStatus);
+                }
+            }}
+        />
+    );
+}
 
     // ── 마이페이지 ───────────────────────────────────────────
     if (exam.status === 'mypage') {
