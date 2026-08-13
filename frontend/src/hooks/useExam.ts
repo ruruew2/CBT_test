@@ -88,8 +88,8 @@ const loadQuestions = useCallback(async (targetSubject?: string) => {
         const count = isAll ? 100 : 20;
 
         const url = isAll
-            ? `${API_BASE_URL}/questions/random?count=${count}`
-            : `${API_BASE_URL}/questions/subject?subject=${encodeURIComponent(currentSubject)}&count=${count}`;
+        ? `${API_BASE_URL}/questions/random?count=${count}`
+        : `${API_BASE_URL}/questions/subject?subject=${encodeURIComponent(currentSubject)}&count=${count}`;
 
         console.log("요청 보내는 URL:", url);
 
